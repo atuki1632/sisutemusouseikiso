@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+#define MAXSTR 256
+
+int main()
+{
+    int upperCaseCount = 0;
+    int upperCaseCount2= 0;
+    int upperCaseCount3= 0;
+    int upperCaseCount4= 0;
+    char a[MAXSTR];
+    
+    printf("Please Enter a Password:\n");
+    if((fgets(a,256,stdin))!=NULL){
+        a[strlen(a)-1]=0;
+    }
+    
+    if((strlen(a)<8)||(strlen(a)>16))
+        upperCaseCount4+=1;
+    for(int i=0;i<strlen(a);i++){
+        if(isalpha(a[i])!=0)
+        upperCaseCount+=0;
+        else
+        upperCaseCount++;}
+    for(int j=0;j<strlen(a);j++){
+         if(a[j]>='a'&&a[j]<='z')
+         upperCaseCount2++;}
+    for(int k=0;k<strlen(a);k++){
+        if(a[k]>='A'&&a[k]<='Z')
+        upperCaseCount3++;}
+    if(upperCaseCount>0&&upperCaseCount2>0&&upperCaseCount3>0&&upperCaseCount4==0)
+        printf("よくできました");
+    else
+        printf("だめ");
+        return 0;
+}
+  
